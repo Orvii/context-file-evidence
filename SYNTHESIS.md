@@ -26,7 +26,7 @@ The most-cited claim in this space is some variant of "AGENTS.md reduces token u
 
 The standard deviation (1.29M) is ~1.9× the mean: the distribution is a long expensive tail. The file shrank the tail — the paper says exactly this, *"primarily reduces token usage in a small number of very high-cost runs, rather than uniformly lowering token consumption"* — and the **typical run got marginally more expensive**. Input tokens show the same split (mean −9.73%, median +3.41%). Wall-clock is the exception where mean and median agree, which is why the speed result is solid and the cost result is not.
 
-This is [bench-notes](https://github.com/Orvii/bench-notes) note 1 (median-over-mean) caught in the wild, in a peer-adjacent paper, propagated by secondary sources that inverted it: alphaXiv's overview generalizes the wall-clock mean/median agreement to "a general benefit across most tasks" — true for time, false for tokens. The total-token median rise appears **only in the table**; the paper's prose never narrates it.
+This is [bench-notes](https://github.com/Orvii/bench-notes) note 1 (median-over-mean) caught in the wild, in a peer-adjacent paper, propagated by secondary sources that inverted it: alphaXiv's overview generalizes the wall-clock mean/median agreement to "a general benefit across most tasks" — true for time, false for tokens. The total-token median rise appears **only in the table**; the paper's prose never narrates it. The general rule now lives as [bench-notes note 15](https://github.com/Orvii/bench-notes): say which part of the distribution moved.
 
 ## 3. The null and the negative are compatible — the power band is the bridge
 
@@ -35,7 +35,7 @@ Gloaguen reports LLM files *reducing* resolution by 0.5–3%. Khatri reports *no
 - Khatri: at n=17 tasks × 3 repeats, a **30pp** effect is caught only 57% of the time; 10pp needs ~120–200 tasks; TOST bounds any effect to ≤10–15pp.
 - Gloaguen: the effects in play are 2–3pp — an order of magnitude below anything any study in this set can resolve individually. Gloaguen's own v3 walked its headline back accordingly: v1's "+4% for developer files" became "2.4% (p=21%)" with eight tables and significance tests added.
 
-The honest synthesis sentence: **the best current estimate of a context file's effect on correctness is "within a few points of zero, in either direction, depending on the file" — and no published study can yet distinguish that from zero at conventional power.** Anyone selling you a confident sign on this axis is selling a point estimate without its interval.
+The honest synthesis sentence: **the best current estimate of a context file's effect on correctness is "within a few points of zero, in either direction, depending on the file" — and no published study can yet distinguish that from zero at conventional power.** Anyone selling you a confident sign on this axis is selling a point estimate without its interval. The discipline for reporting such results — bound first, headline second — is [equivalence-notes note 12](https://github.com/Orvii/equivalence-notes).
 
 ## 4. Version drift is not pedantry — it changes conclusions
 
