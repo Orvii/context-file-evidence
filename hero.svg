@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-label="context-file-evidence — the mean falls while the median rises: one headline, two opposite facts">
+  <style>
+    .drawbar { animation: grow .9s cubic-bezier(.4,0,.2,1) both; }
+    .b1 { animation-delay: .3s; } .b2 { animation-delay: .5s; }
+    .b3 { animation-delay: .7s; } .b4 { animation-delay: .9s; }
+    .diverge { animation: fade .8s ease-out 1.5s both; }
+    .verdict { animation: fade .8s ease-out 2.0s both; }
+    @keyframes grow { from { transform: scaleY(0); } }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } }
+    .bar { transform-box: fill-box; transform-origin: bottom; }
+    @media (prefers-reduced-motion: reduce) { .drawbar, .diverge, .verdict { animation: none; } }
+  </style>
+
+  <rect width="1200" height="340" fill="#0b0806"/>
+
+  <text x="60" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="50" font-weight="700" fill="#F8F5F2">context-file-evidence</text>
+  <text x="60" y="114" font-family="ui-monospace, Menlo, monospace" font-size="17" letter-spacing="1.2" fill="#FE9106">do AGENTS.md files actually help? four studies, one evidence grid</text>
+  <rect x="60" y="128" width="110" height="3" fill="#FE9106"/>
+
+  <!-- two-metric divergence, from one paper's own table (Lulla 2601.20404) -->
+  <text x="60" y="168" font-family="ui-monospace, Menlo, monospace" font-size="14" fill="#6e5c50">total tokens with an AGENTS.md vs without — same runs, two statistics</text>
+
+  <!-- baseline -->
+  <line x1="60" y1="292" x2="620" y2="292" stroke="#3a2c1e" stroke-width="1"/>
+
+  <!-- mean pair: both fall -->
+  <g class="drawbar b1"><rect class="bar" x="90" y="212" width="46" height="80" fill="#5c4c3f"/></g>
+  <g class="drawbar b2"><rect class="bar" x="146" y="220" width="46" height="72" fill="#FE9106"/></g>
+  <text x="90" y="308" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#6e5c50">mean</text>
+  <g class="verdict"><text x="196" y="216" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#FE9106">&#8595; 9.9%  "cheaper"</text></g>
+
+  <!-- median pair: flat-to-rising -->
+  <g class="drawbar b3"><rect class="bar" x="360" y="234" width="46" height="58" fill="#5c4c3f"/></g>
+  <g class="drawbar b4"><rect class="bar" x="416" y="230" width="46" height="62" fill="#FEAF12"/></g>
+  <text x="360" y="308" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#6e5c50">median</text>
+  <g class="verdict"><text x="466" y="228" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#FEAF12">&#8593; 1.3%  the run you actually get</text></g>
+
+  <g class="diverge">
+    <line x1="640" y1="180" x2="640" y2="300" stroke="#3a2c1e" stroke-width="1"/>
+    <text x="664" y="200" font-family="ui-monospace, Menlo, monospace" font-size="14" fill="#b7a496">the mean fell because a few very</text>
+    <text x="664" y="220" font-family="ui-monospace, Menlo, monospace" font-size="14" fill="#b7a496">expensive tail runs got cheaper.</text>
+    <text x="664" y="244" font-family="ui-monospace, Menlo, monospace" font-size="14" fill="#b7a496">the median — the typical run —</text>
+    <text x="664" y="264" font-family="ui-monospace, Menlo, monospace" font-size="14" fill="#FEAF12">got slightly more expensive.</text>
+    <text x="664" y="292" font-family="ui-monospace, Menlo, monospace" font-size="13" fill="#6e5c50">one headline, two opposite facts.</text>
+  </g>
+
+  <text x="60" y="330" font-family="ui-monospace, Menlo, monospace" font-size="12.5" fill="#6e5c50">every cell cites the primary source verbatim · versions pinned · numbers from arXiv 2601.20404 Table 1</text>
+</svg>

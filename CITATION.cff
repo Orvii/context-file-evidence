@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you cite this evidence grid, please use this metadata — and cite the underlying studies' pinned versions, not this repo, for individual numbers."
+type: dataset
+title: "context-file-evidence — do AGENTS.md/CLAUDE.md files help coding agents? four primary studies in one grid"
+authors:
+  - name: "Orvii"
+    alias: "Orvii collective"
+identifiers:
+  - type: url
+    value: "https://github.com/Orvii/context-file-evidence"
+repository-code: "https://github.com/Orvii/context-file-evidence"
+version: "v1"
+date-released: "2026-10-05"
+notes: "Snapshot dataset as of date-released: Lulla et al. arXiv:2601.20404v2, Gloaguen et al. arXiv:2602.11988v3, Khatri arXiv:2607.27250v1, Chatlatanagulchai et al. arXiv:2511.12884v2. Numbers in this repo are transcriptions of those versions; cite the version you mean."
