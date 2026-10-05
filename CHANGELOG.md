@@ -16,3 +16,4 @@ Newest first. Format: date — headline, then Added/Modified per file.
 - `METHODOLOGY.md` — evidence contract; experimental-vs-observational separation; metric axes; the mean/median rule.
 - `hero.svg` — animated mean-vs-median divergence, numbers from Lulla Table 1; reduced-motion honored.
 - `CONTRIBUTING.md`, `LICENSE` (MIT), `CITATION.cff`.
+- `scripts/pins.json` + `scripts/version-drift.py` + `.github/workflows/version-drift.yml` — monthly CI reports whether any pinned arXiv version has moved upstream; drift is flagged as a research task, never auto-applied.

@@ -1,0 +1,29 @@
+{
+  "comment": "Pinned primary-source versions. scripts/version-drift.py compares these against the arXiv API monthly; a new upstream version means the transcriptions under research/ and the cells under matrix.md may be stale.",
+  "pins": [
+    {
+      "arxiv_id": "2601.20404",
+      "version": 2,
+      "study": "studies/lulla-efficiency.md",
+      "note": "efficiency; Table 1 mean/median split"
+    },
+    {
+      "arxiv_id": "2602.11988",
+      "version": 3,
+      "study": "studies/gloaguen-success.md",
+      "note": "success; renamed AGENTbench->CTXbench between v1 and v2"
+    },
+    {
+      "arxiv_id": "2607.27250",
+      "version": 1,
+      "study": "studies/two-agent-ablation.md",
+      "note": "correctness null; also mirrored at github.com/codeprakhar25/context-files-coding-agents"
+    },
+    {
+      "arxiv_id": "2511.12884",
+      "version": 2,
+      "study": "studies/agent-readmes.md",
+      "note": "observational census; 11 of 16 percentages moved v1->v2"
+    }
+  ]
+}

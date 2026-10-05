@@ -1,0 +1,27 @@
+name: version-drift-report
+
+on:
+  schedule:
+    # 11th of each month, 09:41 UTC — off-peak minute, and a different day
+    # from harness-atlas' drift job so the two monthly runs never collide
+    - cron: "41 9 11 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: run version-drift check
+        run: |
+          mkdir -p reports
+          { echo "## $(date -u +%F)"; python3 scripts/version-drift.py; echo; } >> reports/version-drift-log.md
+      - name: commit report if changed
+        run: |
+          git config user.name "orvii-bot"
+          git config user.email "bot@orvii.local"
+          git add reports/
+          git diff --cached --quiet || { git commit -m "chore(evidence): monthly version-drift report"; git push; }

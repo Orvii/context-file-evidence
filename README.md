@@ -16,6 +16,7 @@ Do `AGENTS.md` / `CLAUDE.md` files actually help coding agents? Four primary stu
 | [studies/](studies/) | one page per study: what it measured, its verbatim results, what it cannot tell you |
 | [research/](research/) | full extraction reports: every table transcribed, arithmetic re-verified, version deltas, evidence logs |
 | [METHODOLOGY.md](METHODOLOGY.md) | the evidence contract — primary source or nothing, version pins, `unknown` over guess |
+| [scripts/version-drift.py](scripts/version-drift.py) | monthly CI check: do the pinned arXiv versions still exist? A new upstream version means a transcription may be stale |
 
 ## The four studies
 
