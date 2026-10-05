@@ -109,10 +109,18 @@ Maintenance (§4.2):
 
 RQ4 bonus (§4.4 v1, §1 v2): classifier **GPT-5**; v1 §4.4: "micro-average F1-score of 0.79"; v2 intro: "Automatic classification is highly effective (0.79 F1-score) for concrete functional topics" and "struggles with abstract or nuanced topics (e.g., Maintenance)". Taxonomy construction (§4.3.2): H1/H2 titles seeded candidate labels; "Claude Opus 4.1, Gemini 2.5 Pro, and GPT-5" prompted for suggestions; "61 initial labels" consolidated to "a final taxonomy of 16 categories"; 332-file proportional sample used for validation. Per-category F1 scores: **not found** (see §8).
 
-## 7. Limitations / Threats to Validity — NOT RETRIEVABLE
+## 7. Limitations / Threats to Validity — RECOVERED FROM THE PDF (v2, pp. 30–32)
 
-- Section 7 "Threats to Validity" exists in both versions; table of contents shows subsections **7.1 Internal Validity, 7.2 Construct Validity, 7.3 External Validity**.
-- The section text was **not reachable** in any fetch (document truncation cuts off inside §6 Related Work / §6.1 "AI agents in software engineering" for v1, earlier for v2). Places checked: arxiv.org/html v2 (4 attempts incl. #S7 anchor), arxiv.org/html v1 (2 attempts), alphaxiv.org/abs/2511.12884, ar5iv.labs.arxiv.org, r.jina.ai proxy (HTTP 403). → **UNVERIFIED — not found in the primary source via available tooling.** Do not paraphrase this section from memory.
+The arXiv HTML rendering truncates before this section; the PDF does not. Recovered verbatim by a second pass over https://arxiv.org/pdf/2511.12884v2 (HTTP 200, 38 pages; text cross-verified with an independent extraction). Subsections: 7.1 Internal, 7.2 Construct, 7.3 External. No §7.4 exists.
+
+**7.1 Internal.** Manual classification is the risk: "Section 4.3 involves manual classification of content within the agent context files, which introduces potential human error and subjective bias." Mitigation: "two inspectors examined the agent context files independently and carefully. This independent labeling achieved 80.3% agreement, and a third inspector resolved any conflicting labels."
+
+**7.2 Construct.** Three threats, each load-bearing for how the 16-type table must be read:
+- *Binary labels measure prevalence, not depth.* "The threat arises because this classification was purely binary; an agent context file was flagged with the Implementation Details label if it contained any mention of code style, regardless of whether that content was minimal (one line of instruction) or substantial (many lines detailing complex conventions). Consequently, the frequency reported for a category represents only the prevalence of the topic, not the depth, complexity, or qualitative richness that developers invested in that specific instruction set." **This is the sentence that bounds every percentage in §4 of this report: 75.9% "Testing" means "mentions testing", not "tests are well specified".**
+- *Readability (FRE) measures form, not difficulty.* "FRE was designed and validated for general English prose, and its two underlying assumptions ... do not map cleanly onto technical, procedural, and code-adjacent text." Imperative directive lists score "easy"; dense architecture prose scores "hard"; "low FRE scores in our dataset may partly reflect technical vocabulary and document form rather than genuine comprehension difficulty." Cross-check: py-readability-metrics, Mann-Whitney U, "median difference of 0.279", no significant difference.
+- *Structure counts only formal Markdown headers.* "Our header-counting approach treats only lines beginning with one or more hash symbols followed by a space as headers, which means that visually structured but syntactically unmarked sections are not captured."
+
+**7.3 External.** "This study examined 2,303 agent context files from 1,925 repositories that use one of three major agentic coding systems (i.e., Claude Code, OpenAI Codex, and GitHub Copilot). Although we expanded the number of studied files compared to our previous study [14], the dataset remains limited, which constrains the generalizability of our findings." Three tools, not the whole field.
 
 ## 8. Evidence log and UNVERIFIED
 
@@ -124,9 +132,10 @@ RQ4 bonus (§4.4 v1, §1 v2): classifier **GPT-5**; v1 §4.4: "micro-average F1-
 | https://ar5iv.labs.arxiv.org/html/2511.12884 | 200 | Truncated before §7 (mentions §7 only in outline) |
 | https://www.alphaxiv.org/abs/2511.12884 | 200 | Summary page; classifier conclusion sentence; no §7 |
 | https://r.jina.ai/https://arxiv.org/html/2511.12884v2 | 403 | Blocked |
+| https://arxiv.org/pdf/2511.12884v2 | 200 | Full §7 Threats to Validity verbatim (pp. 30–32); HTML truncation bypassed |
 
 UNVERIFIED / UNKNOWN:
-- §7 Threats to Validity text — unknown, not found (see §7 above).
+- §7 Threats to Validity text — **resolved 2026-10-05 via the PDF** (see §7); the HTML-only gap was a rendering artifact, not an absence.
 - RQ4 per-category F1 scores — unknown, not found (only micro-average 0.79).
 - v2 §4.4 classifier attribution — GPT-5/0.79 confirmed in v1 §4.4 and v2 intro; v2 §4.4 body text not directly reached.
 - Any effect of context files on agent performance — not measured by this paper (observational by design; the paper states no performance result in any reachable text).

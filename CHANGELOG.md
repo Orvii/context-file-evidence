@@ -2,6 +2,14 @@
 
 Newest first. Format: date — headline, then Added/Modified per file.
 
+## [2026-10-05] - PDF gap-fill: two unknowns resolved
+
+### Modified
+- `research/agent-readmes-observational.md` §7 — Threats to Validity recovered verbatim from the v2 PDF (the HTML truncates before it): 80.3% inter-inspector agreement, binary labels measure prevalence not depth, FRE measures form not difficulty, header counts capture only formal Markdown.
+- `research/evaluating-agents-md.md` — the documentation-removal ablation's missing percentage recovered: **2.7%** (v3 Appendix B / Figure 12; v1 §4.3 / Figure 5). Root cause of the miss recorded: arXiv HTML carries the value in MathML, which tag-stripping extraction drops.
+- `studies/agent-readmes.md` — new "what the paper says about its own numbers" section; footer updated.
+- `studies/gloaguen-success.md` — the ablation paragraph now carries 2.7% and the redundancy-conditional reading it supports.
+
 ## [2026-10-05] - Initial release: four studies, one grid
 
 ### Added

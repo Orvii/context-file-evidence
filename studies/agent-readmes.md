@@ -59,4 +59,8 @@ It is the observational anchor. When [Gloaguen](gloaguen-success.md) finds that 
 
 ---
 
-*Version pin: arXiv:2511.12884 **v2** (9 Aug 2026); v1 values recorded in the delta table above. The paper's §7 Threats to Validity was not retrievable through available tooling at extraction time and is deliberately not paraphrased here.*
+## What the paper says about its own numbers
+
+The §7 the HTML rendering hides (recovered from the PDF) bounds how the table above may be used: the 16 labels are **binary**, so "75.9% Testing" means *mentions testing somewhere*, not that tests are well specified — "the frequency reported for a category represents only the prevalence of the topic, not the depth, complexity, or qualitative richness". Labels were set by two independent inspectors at **80.3% agreement** with a third resolving conflicts. The readability scores measure surface form, not comprehension ("low FRE scores ... may partly reflect technical vocabulary and document form rather than genuine comprehension difficulty"). And the corpus is three tools — Claude Code, Codex, Copilot — which the authors themselves call limiting.
+
+*Version pin: arXiv:2511.12884 **v2** (9 Aug 2026); v1 values recorded in the delta table above; §7 recovered verbatim from the v2 PDF.*

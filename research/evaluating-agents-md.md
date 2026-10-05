@@ -134,7 +134,10 @@ GPT-5.2, LLM-generated Desc.: 70.8% → 66.8% (-4%) · GPT-5.2, Original Desc.: 
 - Category ablation (v3 Table 7 only): removing testing/overview/tooling sections never significantly improves accuracy; removing testing significantly cuts cost (CTXbench p=0.023; SWE-bench p=0.0035); removing tooling cuts SWE-bench cost (p=0.0012).
 - Issue-description ablation (v3 Table 8): LLM-rewritten issue descriptions raise accuracy in the no-context setting, but context files still reduce it (-4% GPT-5.2, -2% Qwen); with original descriptions, Qwen +2%.
 - No ablation was found varying file length or section count (see §10).
-- Documentation-removal ablation (from an independent fetch of the v1 HTML, not captured in the pass that produced §5): the authors manually remove all documentation (files ending `.md`, example code, and the `docs/` folder) after generating the context file and before evaluating, to test the redundancy hypothesis. In that setting — where the context file is the only documentation available — LLM-generated context files consistently improve performance and outperform developer-written documentation; Claude Code is excluded from this figure due to cost. The percentage in that sentence did not render in the fetch: **value unknown — not captured**.
+- Documentation-removal ablation — **percentage recovered from the PDF: 2.7%.** The authors manually remove all documentation (files ending `.md`, example code, and the contents of `docs/`) after generating the context file and before evaluating, to test the redundancy hypothesis. v3 verbatim (Appendix B, "Context files are redundant documentation", PDF p. 16): "In this setting, where context files are the only source of documentation available, we find that LLM-generated context files not only consistently improve performance by 2.7% on average, but also out[perform developer-provided ones]". Figure 12 caption: "When removing all documentation-related files from the codebase, LLM-generated context files tend to outperform developer-provided (Human) ones on CTX BENCH." Claude Code excluded "for cost reasons" (v1 wording, typo intact: "due to its hight cost"); Figure 12 shows only GPT-5.2, GPT-5.1 Mini, Qwen3-30B.
+- **Location correction:** in v3 this ablation lives in **Appendix B / Figure 12**, not §4.2/Figure 5 — that numbering is v1's (§4.3 "Trace analysis", Figure 5, dataset "AGENT BENCH"). The v1 percentage is the same 2.7%.
+- **Why HTML extraction dropped the number:** arXiv HTML v3 carries the value inside MathML (`<math alttext="2.7"><mn>2.7</mn>…`), so naive HTML-to-text scraping loses it while the number is present in the HTML source. Any future extraction of arXiv HTML must parse MathML, not strip tags.
+- Figure 12 has **no data labels**: per-agent success-rate values for this ablation exist nowhere in the PDF text (bar plot only, y-axis 30–70). The 2.7% average is the only number.
 
 ## 8. Limitations / threats to validity (Section 5, both versions)
 
@@ -167,7 +170,7 @@ All fetches returned usable content; the fetch tool does not expose HTTP status 
 - The dev-files 20%/2% reasoning-token attribution to AGENTbench (v1) is inferred from the Human condition existing only there; the sentence itself does not name the benchmark.
 - v1 Table 2 error bars — the v1 transcription showed no ± values; v3 shows them. Unconfirmed whether v1 prints them.
 - The "highly redundant" vs "mostly redundant" wording discrepancy (§6) — one of the two fetch results is misattributed; the exact sentence and section are unverified.
-- The percentage in the documentation-removal ablation (§7) — not captured; unknown.
+- The percentage in the documentation-removal ablation — **resolved 2026-10-05 via the PDF: 2.7%** (Appendix B/Figure 12 in v3). Per-agent values for that figure remain unavailable (no data labels).
 
 ## Five most important verified facts
 
