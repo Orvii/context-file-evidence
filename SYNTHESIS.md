@@ -73,6 +73,7 @@ A study that fills any of these rows is a genuine contribution; a study that re-
 3. Put the expensive-to-rediscover facts in it (slow test suites, the real build command, the convention that will silently break PRs). Delete the architecture overview.
 4. If you claim a benefit, measure it on your own tasks. The published effect sizes (±2–3pp) are below the resolution of everything in this grid; your repo's file may genuinely help or hurt, and only a paired local experiment will tell you which.
 5. When citing any number from this space, cite the version. See §4.
+6. Check the *casing* of the file your harness reads. [convention-map](https://github.com/Orvii/convention-map)'s v3.4 wave found **Bolt** auto-reading lowercase `agents.md` while documenting no `AGENTS.md` at all — a repo that ships only the uppercase standard is invisible to it. The convention spread faster than its spelling.
 
 ---
 

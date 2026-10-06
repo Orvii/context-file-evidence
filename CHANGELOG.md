@@ -1,5 +1,10 @@
 # Changelog
 
+## [2026-10-06] - SYNTHESIS rule 6: check the casing
+
+### Modified
+- `SYNTHESIS.md` §7 — new action rule: verify the filename casing your harness reads. convention-map v3.4 found Bolt auto-reading lowercase `agents.md` with no documented `AGENTS.md`; shipping only the uppercase standard is invisible to it.
+
 Newest first. Format: date — headline, then Added/Modified per file.
 
 ## [2026-10-05] - PDF gap-fill: two unknowns resolved
